@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4b526e01-6787-4f9f-9404-3122a01b28a3",
+		"_postman_id": "9754013f-989f-48cb-9ac7-1d6d63fe9dfb",
 		"name": "Auth0 Management API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -2475,6 +2475,48 @@
 				}
 			],
 			"description": "Users"
+		},
+		{
+			"name": "Users By Email",
+			"item": [
+				{
+					"name": "Search users by email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth0_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{auth0_domain}}/api/v2/users-by-email?email=",
+							"protocol": "https",
+							"host": [
+								"{{auth0_domain}}"
+							],
+							"path": [
+								"api",
+								"v2",
+								"users-by-email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "",
+									"description": "Email address to search for"
+								}
+							]
+						},
+						"description": "If Auth0 is the identify provider (idP), the email address associated with a user is saved in lower case, regardless of how you initially provided it. For example, if you register a user as **JohnSmith@example.com**, Auth0 saves the user's email as **johnsmith@example.com**.\n\nIn cases where Auth0 is not the idP, the `email` is stored based on the rules of idP, so make sure the search is made using the correct capitalization.\n\nWhen using this endpoint, make sure that you are searching for users via email addresses using the correct case."
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
