@@ -1,2522 +1,2522 @@
 {
-	"info": {
-		"_postman_id": "9754013f-989f-48cb-9ac7-1d6d63fe9dfb",
-		"name": "Auth0 Management API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Blacklists",
-			"item": [
-				{
-					"name": "Get all blacklisted tokens",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/blacklists/tokens",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"blacklists",
-								"tokens"
-							]
-						},
-						"description": "Retrieves the <code>jti</code> and <code>aud</code> of all tokens in the blacklist."
-					},
-					"response": []
-				},
-				{
-					"name": "Blacklist a token",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"aud\": \"\",\r\n  \"jti\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/blacklists/tokens",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"blacklists",
-								"tokens"
-							]
-						},
-						"description": "Adds the token identified by the <code>jti</code> to a blacklist for the tenant."
-					},
-					"response": []
-				}
-			],
-			"description": "Blacklists"
-		},
-		{
-			"name": "Client Grants",
-			"item": [
-				{
-					"name": "Get all client grants",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/client-grants",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"client-grants"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create a client grant",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"client_id\": \"\",\r\n  \"audience\": \"\",\r\n  \"scope\": [\r\n    \"\"\r\n  ]\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/client-grants",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"client-grants"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a client grant",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/client-grants/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"client-grants",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a client grant",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"scope\": [\r\n    \"\"\r\n  ]\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/client-grants/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"client-grants",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Client Grants"
-		},
-		{
-			"name": "Clients",
-			"item": [
-				{
-					"name": "Get all clients",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/clients",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"clients"
-							]
-						},
-						"description": "Retrieves a list of all client applications. Accepts a list of fields to include or exclude.<br/><strong>Important:</strong> The <code>client_secret</code> and <code>encryption_key</code> attributes can only be retrieved with the <code>read:client_keys</code> scope."
-					},
-					"response": []
-				},
-				{
-					"name": "Create a client",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"client_secret\": \"\",\r\n  \"logo_uri\": \"\",\r\n  \"callbacks\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_origins\": [\r\n    \"\"\r\n  ],\r\n  \"client_aliases\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_clients\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_logout_urls\": [\r\n    \"\"\r\n  ],\r\n  \"token_endpoint_auth_method\": \"\",\r\n  \"app_type\": \"\",\r\n  \"is_first_party\": true,\r\n  \"jwt_configuration\": {\r\n    \"lifetime_in_seconds\": 0,\r\n    \"secret_encoded\": true,\r\n    \"scopes\": {},\r\n    \"alg\": \"\"\r\n  },\r\n  \"encryption_key\": {\r\n    \"pub\": \"\",\r\n    \"cert\": \"\"\r\n  },\r\n  \"sso\": true,\r\n  \"custom_login_page_on\": true,\r\n  \"custom_login_page\": \"\",\r\n  \"custom_login_page_preview\": \"\",\r\n  \"form_template\": \"\",\r\n  \"is_heroku_app\": true,\r\n  \"addons\": {\r\n    \"aws\": {},\r\n    \"azure_blob\": {},\r\n    \"azure_sb\": {},\r\n    \"rms\": {},\r\n    \"mscrm\": {},\r\n    \"slack\": {},\r\n    \"box\": {},\r\n    \"cloudbees\": {},\r\n    \"concur\": {},\r\n    \"dropbox\": {},\r\n    \"echosign\": {},\r\n    \"egnyte\": {},\r\n    \"firebase\": {},\r\n    \"newrelic\": {},\r\n    \"office365\": {},\r\n    \"salesforce\": {},\r\n    \"salesforce_api\": {},\r\n    \"salesforce_sandbox_api\": {},\r\n    \"samlp\": {},\r\n    \"layer\": {},\r\n    \"sap_api\": {},\r\n    \"sharepoint\": {},\r\n    \"springcm\": {},\r\n    \"wams\": {},\r\n    \"wsfed\": {},\r\n    \"zendesk\": {},\r\n    \"zoom\": {}\r\n  },\r\n  \"resource_servers\": [\r\n    {\r\n      \"identifier\": \"\",\r\n      \"scopes\": [\r\n        \"\"\r\n      ]\r\n    }\r\n  ],\r\n  \"client_metadata\": {},\r\n  \"mobile\": {\r\n    \"android\": {},\r\n    \"ios\": {}\r\n  }\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/clients",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"clients"
-							]
-						},
-						"description": "Creates a new client application. The samples on the right show every attribute that can be used."
-					},
-					"response": []
-				},
-				{
-					"name": "Get a client",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/clients/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Retrieves a client by its id.<br/><strong>Important:</strong> The <code>client_secret</code>,<code>encryption_key</code> and <code>signing_keys</code> attributes can only be retrieved with the <code>read:client_keys</code> scope."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a client",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/clients/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Deletes a client and all its related assets (like rules, connections, etc) given its id."
-					},
-					"response": []
-				},
-				{
-					"name": "Update a client",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"client_secret\": \"\",\r\n  \"logo_uri\": \"\",\r\n  \"callbacks\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_origins\": [\r\n    \"\"\r\n  ],\r\n  \"client_aliases\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_clients\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_logout_urls\": [\r\n    \"\"\r\n  ],\r\n  \"jwt_configuration\": {\r\n    \"lifetime_in_seconds\": 0,\r\n    \"secret_encoded\": true,\r\n    \"scopes\": {},\r\n    \"alg\": \"\"\r\n  },\r\n  \"encryption_key\": {\r\n    \"pub\": \"\",\r\n    \"cert\": \"\",\r\n    \"subject\": \"\"\r\n  },\r\n  \"sso\": true,\r\n  \"custom_login_page_on\": true,\r\n  \"token_endpoint_auth_method\": \"\",\r\n  \"app_type\": \"\",\r\n  \"is_first_party\": true,\r\n  \"custom_login_page\": \"\",\r\n  \"custom_login_page_preview\": \"\",\r\n  \"form_template\": \"\",\r\n  \"addons\": {\r\n    \"aws\": {},\r\n    \"azure_blob\": {},\r\n    \"azure_sb\": {},\r\n    \"rms\": {},\r\n    \"mscrm\": {},\r\n    \"slack\": {},\r\n    \"box\": {},\r\n    \"cloudbees\": {},\r\n    \"concur\": {},\r\n    \"dropbox\": {},\r\n    \"echosign\": {},\r\n    \"egnyte\": {},\r\n    \"firebase\": {},\r\n    \"newrelic\": {},\r\n    \"office365\": {},\r\n    \"salesforce\": {},\r\n    \"salesforce_api\": {},\r\n    \"salesforce_sandbox_api\": {},\r\n    \"samlp\": {},\r\n    \"layer\": {},\r\n    \"sap_api\": {},\r\n    \"sharepoint\": {},\r\n    \"springcm\": {},\r\n    \"wams\": {},\r\n    \"wsfed\": {},\r\n    \"zendesk\": {},\r\n    \"zoom\": {}\r\n  },\r\n  \"resource_servers\": [\r\n    {\r\n      \"identifier\": \"\",\r\n      \"scopes\": [\r\n        \"\"\r\n      ]\r\n    }\r\n  ],\r\n  \"client_metadata\": {},\r\n  \"mobile\": {\r\n    \"android\": {},\r\n    \"ios\": {}\r\n  }\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/clients/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"clients",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "<strong>Important:</strong> The <code>client_secret</code> and <code>encryption_key</code> attributes can only be updated with the <code>update:client_keys</code> scope."
-					},
-					"response": []
-				}
-			],
-			"description": "Clients"
-		},
-		{
-			"name": "Connections",
-			"item": [
-				{
-					"name": "Get all connections",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/connections",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"connections"
-							]
-						},
-						"description": "Retrieves every connection matching the specified strategy. All connections are retrieved if no strategy is being specified. Accepts a list of fields to include or exclude in the resulting list of connection objects."
-					},
-					"response": []
-				},
-				{
-					"name": "Create a connection",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"strategy\": \"\",\r\n  \"options\": {\r\n    \"validation\": {},\r\n    \"passwordPolicy\": \"\",\r\n    \"password_history\": {},\r\n    \"password_no_personal_info\": {},\r\n    \"password_dictionary\": {}\r\n  },\r\n  \"enabled_clients\": [\r\n    \"\"\r\n  ]\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/connections",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"connections"
-							]
-						},
-						"description": "Creates a new connection according to the JSON object received in <code>body</code>.<br/> The samples on the right show all available attributes. Mandatory attributes are <code>name</code> and <code>strategy</code>.<br/> Valid Strategy names are: <code>ad</code>, <code>adfs</code>, <code>amazon</code>, <code>dropbox</code>, <code>bitbucket</code>, <code>aol</code>, <code>auth0-adldap</code>, <code>auth0-oidc</code>, <code>auth0</code>, <code>baidu</code>, <code>bitly</code>, <code>box</code>, <code>custom</code>, <code>dwolla</code>, <code>email</code>, <code>evernote-sandbox</code>, <code>evernote</code>, <code>exact</code>, <code>facebook</code>, <code>fitbit</code>, <code>flickr</code>, <code>github</code>, <code>google-apps</code>, <code>google-oauth2</code>, <code>google-openid</code>, <code>instagram</code>, <code>ip</code>, <code>linkedin</code>, <code>miicard</code>, <code>oauth1</code>, <code>oauth2</code>, <code>office365</code>, <code>paypal</code>, <code>pingfederate</code>, <code>planningcenter</code>, <code>renren</code>, <code>salesforce-community</code>, <code>salesforce-sandbox</code>, <code>salesforce</code>, <code>samlp</code>, <code>sharepoint</code>, <code>shopify</code>, <code>sms</code>, <code>soundcloud</code>, <code>thecity-sandbox</code>, <code>thecity</code>, <code>thirtysevensignals</code>, <code>twitter</code>, <code>untappd</code>, <code>vkontakte</code>, <code>waad</code>, <code>weibo</code>, <code>windowslive</code>, <code>wordpress</code>, <code>yahoo</code>, <code>yammer</code>, <code>yandex</code>"
-					},
-					"response": []
-				},
-				{
-					"name": "Get a connection",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/connections/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"connections",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Retrieves a connection by its <code>id</code>."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a connection",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/connections/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"connections",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Deletes a connection and all its users."
-					},
-					"response": []
-				},
-				{
-					"name": "Update a connection",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"options\": {\r\n    \"validation\": {},\r\n    \"passwordPolicy\": \"\",\r\n    \"password_history\": {},\r\n    \"password_no_personal_info\": {},\r\n    \"password_dictionary\": {}\r\n  },\r\n  \"enabled_clients\": [\r\n    \"\"\r\n  ]\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/connections/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"connections",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Note: if you use the options parameter, the whole options object will be overridden, ensure all parameters are present"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a connection user",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/connections/:id/users",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"connections",
-								":id",
-								"users"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Deletes a specified connection user by its email (currently only database connections are supported and you cannot delete all users from specific connection)."
-					},
-					"response": []
-				}
-			],
-			"description": "Connections"
-		},
-		{
-			"name": "Device Credentials",
-			"item": [
-				{
-					"name": "List device credentials",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/device-credentials",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"device-credentials"
-							]
-						},
-						"description": "You can use the device-credentials endpoint using Basic authentication with username and password from a database connection<br />The Authorization header should be <code>Authorization: Basic base64(\"{db_conn_name}\\{user}:{password}\")</code>\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Create a device public key",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"device_name\": \"\",\r\n  \"type\": \"\",\r\n  \"value\": \"\",\r\n  \"device_id\": \"\",\r\n  \"client_id\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/device-credentials",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"device-credentials"
-							]
-						},
-						"description": "You can use the device-credentials endpoint using Basic authentication with username and password from a database connection<br />The Authorization header should be <code>Authorization: Basic base64(\"{db_conn_name}\\{user}:{password}\")</code>\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a device credential",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/device-credentials/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"device-credentials",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "You can use the device-credentials endpoint using Basic authentication with username and password from a database connection<br />The Authorization header should be <code>Authorization: Basic base64(\"{db_conn_name}\\{user}:{password}\")</code>\n"
-					},
-					"response": []
-				}
-			],
-			"description": "Device Credentials"
-		},
-		{
-			"name": "Emails",
-			"item": [
-				{
-					"name": "Get the email provider",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/emails/provider",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"emails",
-								"provider"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete the email provider",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/emails/provider",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"emails",
-								"provider"
-							]
-						},
-						"description": "<strong>USE WITH CAUTION</strong>"
-					},
-					"response": []
-				},
-				{
-					"name": "Configure the email provider",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"enabled\": true,\r\n  \"default_from_address\": \"\",\r\n  \"credentials\": {\r\n    \"api_key\": \"\"\r\n  },\r\n  \"settings\": {}\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/emails/provider",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"emails",
-								"provider"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update the email provider",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"enabled\": true,\r\n  \"default_from_address\": \"\",\r\n  \"credentials\": {\r\n    \"api_key\": \"\"\r\n  },\r\n  \"settings\": {}\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/emails/provider",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"emails",
-								"provider"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Emails"
-		},
-		{
-			"name": "Guardian",
-			"item": [
-				{
-					"name": "Get a list of factors and statuses",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/factors",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"factors"
-							]
-						},
-						"description": "Retrieves all factors. Useful to check factor enablement and trial status."
-					},
-					"response": []
-				},
-				{
-					"name": "Get a Guardian enrollment",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/enrollments/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"enrollments",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Retrieves an enrollment. Useful to check its type and related metadata."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a Guardian enrollment",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/enrollments/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"enrollments",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Deletes an enrollment. Useful when you want to force re-enroll."
-					},
-					"response": []
-				},
-				{
-					"name": "Get enrollment and verification templates",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/factors/sms/templates",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"factors",
-								"sms",
-								"templates"
-							]
-						},
-						"description": "Retrieve both templates. Useful to check if a different template than default were set."
-					},
-					"response": []
-				},
-				{
-					"name": "Update enrollment and verification SMS templates.",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"enrollment_message\": \"\",\r\n  \"verification_message\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/factors/sms/templates",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"factors",
-								"sms",
-								"templates"
-							]
-						},
-						"description": "Useful to send custom messages on sms enrollment and verification"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Guardian factor provider",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/factors/:factor_name/providers/:name",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"factors",
-								":factor_name",
-								"providers",
-								":name"
-							],
-							"variable": [
-								{
-									"key": "factor_name"
-								},
-								{
-									"key": "name"
-								}
-							]
-						},
-						"description": "Returns provider configuration"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Guardian Factor",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"enabled\": true\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/factors/:name",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"factors",
-								":name"
-							],
-							"variable": [
-								{
-									"key": "name"
-								}
-							]
-						},
-						"description": "Useful to enable / disable factor"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Guardian's Twilio SMS factor provider",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"from\": \"\",\r\n  \"messaging_service_sid\": \"\",\r\n  \"auth_token\": \"\",\r\n  \"sid\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/guardian/factors/sms/providers/twilio",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"guardian",
-								"factors",
-								"sms",
-								"providers",
-								"twilio"
-							]
-						},
-						"description": "Useful to configure SMS provider"
-					},
-					"response": []
-				}
-			],
-			"description": "Guardian"
-		},
-		{
-			"name": "Jobs",
-			"item": [
-				{
-					"name": "Get a job",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/jobs/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"jobs",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Retrieves a job. Useful to check its status."
-					},
-					"response": []
-				},
-				{
-					"name": "Get failed job error details",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/jobs/:id/errors",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"jobs",
-								":id",
-								"errors"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Import users",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/jobs/users-imports",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"jobs",
-								"users-imports"
-							]
-						},
-						"description": "Imports users to a connection from a file using a long running job. <strong>Important:</strong> The documentation for the file format is <a href=https://docs.auth0.com/bulk-import>here</a>."
-					},
-					"response": []
-				},
-				{
-					"name": "Send a \"verify email address\" email",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"user_id\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/jobs/verification-email",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"jobs",
-								"verification-email"
-							]
-						},
-						"description": "Send an email to the specified user that asks them to click a link to verify their email address."
-					},
-					"response": []
-				}
-			],
-			"description": "Jobs"
-		},
-		{
-			"name": "Logs",
-			"item": [
-				{
-					"name": "Search log events",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/logs",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"logs"
-							]
-						},
-						"description": "Retrieves log entries that match the specified search criteria (or list all entries if no criteria is used).<br/>You can search with a criteria using the <code>q</code> parameter or you can search by a specific log ID (search by checkpoint):<br/><br/><h5>The search by criteria can use the following parameters:</h5><ul><li><b>q:</b> Search Criteria using <a href=\"https://auth0.com/docs/api/management/v2/query-string-syntax\">Query String Syntax</a></li><li><b>page:</b> The page number. Zero based</li><li><b>per_page:</b> The amount of entries per page</li><li><b>sort:</b> The field to use for sorting. Use <code>field:order</code>, where order is <code>1</code> for ascending and <code>-1</code> for descending. For example <code>date:-1</code></li><li><b>fields:</b> A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields</li><li><b>include_fields:</b> <code>true</code> if the fields specified are to be included in the result, <code>false</code> otherwise. Defaults to <code>true</code></li><li><b>include_totals:</b> <code>true</code> if a query summary must be included in the result, false otherwise. Default <code>false</code>.</li></ul><h5>The search by checkpoint use the following parameters:</h5><ul><li><b>from:</b> Log Event Id to start retrieving logs. You can limit the amount of logs using the <code>take</code> parameter.</li><li><b>take:</b> The total amount of entries to retrieve when using the <code>from</code> parameter.</li></ul>\n<h5>Event acronym mapping</h5><ul><li>s: Success Login </li><li>seacft: Success Exchange (Authorization Code for Access Token)</li><li>feacft: Failed Exchange (Authorization Code for Access Token)</li><li>seccft: Success Exchange (Client Credentials for Access Token)</li><li>feccft: Failed Exchange (Client Credentials for Access Token)</li><li>f: Failed Login </li><li>w: Warnings During Login </li><li>du: Deleted User </li><li>fu: Failed Login (invalid email/username) </li><li>fp: Failed Login (wrong password) </li><li>fc: Failed by Connector </li><li>fco: Failed by CORS </li><li>con: Connector Online </li><li>coff: Connector Offline </li><li>fcpro: Failed Connector Provisioning </li><li>ss: Success Signup </li><li>fs: Failed Signup </li><li>cs: Code Sent </li><li>cls: Code/Link Sent </li><li>sv: Success Verification Email </li><li>fv: Failed Verification Email </li><li>scp: Success Change Password </li><li>fcp: Failed Change Password </li><li>sce: Success Change Email </li><li>fce: Failed Change Email </li><li>scu: Success Change Username </li><li>fcu: Failed Change Username </li><li>scpn: Success Change Phone Number </li><li>fcpn: Failed Change Phone Number </li><li>svr: Success Verification Email Request </li><li>fvr: Failed Verification Email Request </li><li>scpr: Success Change Password Request </li><li>fcpr: Failed Change Password Request </li><li>fn: Failed Sending Notification </li><li>sapi: API Operation </li><li>fapi: Failed API Operation </li><li>limit_wc: Blocked Account </li><li>limit_mu: Blocked IP Address </li><li>limit_ui: Too Many Calls to /userinfo </li><li>api_limit: Rate Limit On API </li><li>sdu: Successful User Deletion </li><li>fdu: Failed User Deletion </li><li>slo: Success Logout</li><li>flo: Failed Logout</li><li>sd: Success Delegation</li><li>fd: Failed Delegation</li></ul>\n<h5>List of fields that can be used in fields and sort</h5><ul><li>date: The moment when the event occured.</li><li>connection: The connection related to the event.</li><li>client_id: The client id related to the event</li><li>client_name: The name of the client related to the event.</li><li>ip: The IP address from where the request that caused the log entry originated.</li><li>user_id: The user id related to the event.</li><li>user_name: The user name related to the event.</li><li>description: The description of the event.</li><li>user_agent: The user agent that is related to the event.</li><li>type: The event type. Refer to the event acronym mappings above for a list of possible event types.</li><li>details: The details object of the event.</li><li>strategy: The connection strategy related to the event.</li><li>strategy_type: The connection strategy type related to the event.</li></ul>"
-					},
-					"response": []
-				},
-				{
-					"name": "Get a log event by id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/logs/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"logs",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Retrieves the data related to the log entry identified by id. This returns a single log entry representation as specified in the schema."
-					},
-					"response": []
-				}
-			],
-			"description": "Logs"
-		},
-		{
-			"name": "Resource Servers",
-			"item": [
-				{
-					"name": "Get a resource server by its id",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/resource-servers/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"resource-servers",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a resource server",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/resource-servers/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"resource-servers",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a resource server",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"scopes\": [\r\n    {\r\n      \"value\": \"\",\r\n      \"description\": \"\"\r\n    }\r\n  ],\r\n  \"signing_alg\": \"\",\r\n  \"signing_secret\": \"\",\r\n  \"token_lifetime\": 0\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/resource-servers/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"resource-servers",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create a resource server",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"identifier\": \"\",\r\n  \"scopes\": [\r\n    {\r\n      \"value\": \"\",\r\n      \"description\": \"\"\r\n    }\r\n  ],\r\n  \"signing_alg\": \"\",\r\n  \"signing_secret\": \"\",\r\n  \"token_lifetime\": 0\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/resource-servers",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"resource-servers"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Resource Servers"
-		},
-		{
-			"name": "Rules",
-			"item": [
-				{
-					"name": "Get all rules",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/rules",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"rules"
-							]
-						},
-						"description": "Retrieves a list of all rules. Accepts a list of fields to include or exclude.<br/> The <code>enabled</code> parameter can be specified to get enabled or disabled rules. The rule's stage of executing could be set to the following values <code>login_success</code>, <code>login_failure</code> or <code>pre_authorize</code>"
-					},
-					"response": []
-				},
-				{
-					"name": "Create a rule",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"\",\r\n  \"script\": \"\",\r\n  \"order\": {},\r\n  \"enabled\": true,\r\n  \"stage\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/rules",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"rules"
-							]
-						},
-						"description": "Creates a new rule according to the JSON object received in <code>body</code>.<br/>The samples on the right show you every attribute that could be used. Mandatory attributes are <code>name</code> and <code>script</code>Note: Changing a rule's stage of execution from the default <code>login_success</code> can change the rule's function signature to have user omitted."
-					},
-					"response": []
-				},
-				{
-					"name": "Get a rule",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/rules/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"rules",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Retrieves a rule by its ID. Accepts a list of fields to include or exclude in the result."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a rule",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/rules/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"rules",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a rule",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"script\": \"\",\r\n  \"name\": \"\",\r\n  \"order\": {},\r\n  \"enabled\": true\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/rules/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"rules",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Rules"
-		},
-		{
-			"name": "Stats",
-			"item": [
-				{
-					"name": "Get active users count",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/stats/active-users",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"stats",
-								"active-users"
-							]
-						},
-						"description": "Gets the active users count (logged in during the last 30 days)."
-					},
-					"response": []
-				},
-				{
-					"name": "Get daily stats",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/stats/daily",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"stats",
-								"daily"
-							]
-						},
-						"description": "Gets the daily stats for a particular period."
-					},
-					"response": []
-				}
-			],
-			"description": "Stats"
-		},
-		{
-			"name": "Tenants",
-			"item": [
-				{
-					"name": "Get tenant settings",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/tenants/settings",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"tenants",
-								"settings"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update tenant settings",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"change_password\": {\r\n    \"enabled\": true,\r\n    \"html\": \"\"\r\n  },\r\n  \"guardian_mfa_page\": {\r\n    \"enabled\": true,\r\n    \"html\": \"\"\r\n  },\r\n  \"error_page\": {\r\n    \"html\": \"\",\r\n    \"show_log_link\": true,\r\n    \"url\": \"\"\r\n  },\r\n  \"flags\": {\r\n    \"change_pwd_flow_v1\": true,\r\n    \"enable_client_connections\": true,\r\n    \"enable_apis_section\": true,\r\n    \"enable_pipeline2\": true\r\n  },\r\n  \"friendly_name\": \"\",\r\n  \"picture_url\": \"\",\r\n  \"support_email\": \"\",\r\n  \"support_url\": \"\",\r\n  \"allowed_logout_urls\": [\r\n    \"\"\r\n  ],\r\n  \"session_lifetime\": 0\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/tenants/settings",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"tenants",
-								"settings"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Tenants"
-		},
-		{
-			"name": "Tickets",
-			"item": [
-				{
-					"name": "Create an email verification ticket",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"result_url\": \"\",\r\n  \"user_id\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/tickets/email-verification",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"tickets",
-								"email-verification"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create a password change ticket",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"result_url\": \"\",\r\n  \"user_id\": \"\",\r\n  \"new_password\": \"\",\r\n  \"connection_id\": \"\",\r\n  \"email\": \"\",\r\n  \"ttl_sec\": 0\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/tickets/password-change",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"tickets",
-								"password-change"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "Tickets"
-		},
-		{
-			"name": "User Blocks",
-			"item": [
-				{
-					"name": "Get blocks by identifier",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/user-blocks",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"user-blocks"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Unblock by identifier",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/user-blocks",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"user-blocks"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get a user's blocks",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/user-blocks/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"user-blocks",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Unblock a user",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/user-blocks/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"user-blocks",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"description": "User Blocks"
-		},
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "List or search users",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create a user",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"connection\": \"\",\r\n  \"email\": \"\",\r\n  \"username\": \"\",\r\n  \"password\": \"\",\r\n  \"phone_number\": \"\",\r\n  \"user_metadata\": {},\r\n  \"email_verified\": true,\r\n  \"app_metadata\": {}\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users"
-							]
-						},
-						"description": "Creates a new user according to the JSON object received in <code>body</code>.<br/> The samples on the right show you every attribute that could be used. The attribute <code>connection</code> is always mandatory but depending on the type of connection you are using there could be others too. For instance, Auth0 DB Connections require <code>email</code> and <code>password</code>."
-					},
-					"response": []
-				},
-				{
-					"name": "Get a user",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a user",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a user",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"blocked\": true,\r\n  \"email_verified\": true,\r\n  \"email\": \"\",\r\n  \"verify_email\": true,\r\n  \"phone_number\": \"\",\r\n  \"phone_verified\": true,\r\n  \"verify_phone_number\": true,\r\n  \"password\": \"\",\r\n  \"verify_password\": true,\r\n  \"user_metadata\": {},\r\n  \"app_metadata\": {},\r\n  \"connection\": \"\",\r\n  \"username\": \"\",\r\n  \"client_id\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Updates a user with the object's properties received in the request's body (the object should be a JSON object).<br/>These are the attributes that can be updated at the root level:<ul><li>blocked</li><li>email_verified</li><li>email</li><li>verify_email</li><li>password</li><li>phone_number</li><li>phone_verified</li><li>verify_password</li><li>user_metadata</li><li>app_metadata</li><li>username</li></ul>Some considerations:<ul><li>The properties of the new object will replace the old ones.</li><li>The metadata fields are an exception to this rule (<code>user_metadata</code> and <code>app_metadata</code>). These properties are merged instead of being replaced but be careful, the merge only occurs on the first level.</li><li>If you are updating <code>email_verified</code>, <code>phone_verified</code>, <code>username</code> or <code>password</code> you need to specify the <code>connection</code> property too.</li><li>If your are updating <code>email</code> or <code>phone_number</code> you need to specify the <code>connection</code> and the <code>client_id</code> properties.</ul><h5>Updating a field (non-metadata property)</h5>To mark the email address of a user as verified, the body to send should be:<pre><code>{ \"email_verified\": true }</code></pre><h5>Updating a user metadata root property</h5>Let's asume that our test user has the following <code>user_metadata</code>:<pre><code>{ \"user_metadata\" : { \"profileCode\": 1479 } }</code></pre>To add the field <code>addresses</code> the body to send should be:<pre><code>{ \"user_metadata\" : { \"addresses\": {\"work_address\": \"100 Industrial Way\"} }}</code></pre>The modified object ends up with the following <code>user_metadata</code> property:<pre><code>{\n  \"user_metadata\": {\n    \"profileCode\": 1479,\n    \"addresses\": { \"work_address\": \"100 Industrial Way\" }\n  }\n}</code></pre><h5>Updating an inner user metadata property</h5>Starting from previous user metadata, if we want to add the field <code>\"home_address\": \"742 Evergreen Terrace\"</code> in <code>addresses</code> we should send the whole addresses object (since this object is on the first level, it will be merged in, but it's own properties won't). The body to send should be:\n<pre><code>{\n  \"user_metadata\": {\n    \"addresses\": {\n      \"work_address\": \"100 Industrial Way\",\n      \"home_address\": \"742 Evergreen Terrace\"\n    }\n  }\n}</code></pre>The modified object ends up with the following <code>user_metadata</code> property:<pre><code>{\n  \"user_metadata\": {\n    \"profileCode\": 1479,\n    \"addresses\": {\n      \"work_address\": \"100 Industrial Way\",\n      \"home_address\": \"742 Evergreen Terrace\"\n    }\n  }\n}</code></pre>"
-					},
-					"response": []
-				},
-				{
-					"name": "Get user's log events",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:user_id/logs",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":user_id",
-								"logs"
-							],
-							"variable": [
-								{
-									"key": "user_id"
-								}
-							]
-						},
-						"description": "Retrieve every log event for a specific user id<br/><h5>Event acronym mapping</h5><ul><li>s: Success Login </li><li>seacft: Success Exchange (Authorization Code for Access Token)</li><li>feacft: Failed Exchange (Authorization Code for Access Token)</li><li>seccft: Success Exchange (Client Credentials for Access Token)</li><li>feccft: Failed Exchange (Client Credentials for Access Token)</li><li>f: Failed Login </li><li>w: Warnings During Login </li><li>du: Deleted User </li><li>fu: Failed Login (invalid email/username) </li><li>fp: Failed Login (wrong password) </li><li>fc: Failed by Connector </li><li>fco: Failed by CORS </li><li>con: Connector Online </li><li>coff: Connector Offline </li><li>fcpro: Failed Connector Provisioning </li><li>ss: Success Signup </li><li>fs: Failed Signup </li><li>cs: Code Sent </li><li>cls: Code/Link Sent </li><li>sv: Success Verification Email </li><li>fv: Failed Verification Email </li><li>scp: Success Change Password </li><li>fcp: Failed Change Password </li><li>sce: Success Change Email </li><li>fce: Failed Change Email </li><li>scu: Success Change Username </li><li>fcu: Failed Change Username </li><li>scpn: Success Change Phone Number </li><li>fcpn: Failed Change Phone Number </li><li>svr: Success Verification Email Request </li><li>fvr: Failed Verification Email Request </li><li>scpr: Success Change Password Request </li><li>fcpr: Failed Change Password Request </li><li>fn: Failed Sending Notification </li><li>sapi: API Operation </li><li>fapi: Failed API Operation </li><li>limit_wc: Blocked Account </li><li>limit_mu: Blocked IP Address </li><li>limit_ui: Too Many Calls to /userinfo </li><li>api_limit: Rate Limit On API </li><li>sdu: Successful User Deletion </li><li>fdu: Failed User Deletion </li><li>slo: Success Logout</li><li>flo: Failed Logout</li><li>sd: Success Delegation</li><li>fd: Failed Delegation</li></ul>\n<h5>List of fields that can be used in fields and sort</h5><ul><li>date: The moment when the event occured.</li><li>connection: The connection related to the event.</li><li>client_id: The client id related to the event</li><li>client_name: The name of the client related to the event.</li><li>ip: The IP address from where the request that caused the log entry originated.</li><li>user_id: The user id related to the event.</li><li>user_name: The user name related to the event.</li><li>description: The description of the event.</li><li>user_agent: The user agent that is related to the event.</li><li>type: The event type. Refer to the event acronym mappings above for a list of possible event types.</li><li>details: The details object of the event.</li><li>strategy: The connection strategy related to the event.</li><li>strategy_type: The connection strategy type related to the event.</li></ul>"
-					},
-					"response": []
-				},
-				{
-					"name": "Get a list of Guardian enrollments",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id/enrollments",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id",
-								"enrollments"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Retrieves all Guardian enrollments."
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a user's multifactor provider",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id/multifactor/:provider",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id",
-								"multifactor",
-								":provider"
-							],
-							"variable": [
-								{
-									"key": "id"
-								},
-								{
-									"key": "provider"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Unlink a user identity",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id/identities/:provider/:user_id",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id",
-								"identities",
-								":provider",
-								":user_id"
-							],
-							"variable": [
-								{
-									"key": "id"
-								},
-								{
-									"key": "provider"
-								},
-								{
-									"key": "user_id"
-								}
-							]
-						},
-						"description": "Unlinks an identity from the target user, and it becomes a separated user again.\n"
-					},
-					"response": []
-				},
-				{
-					"name": "Removes the current recovery token, generates and returns a new one",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id/recovery-code-regeneration",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id",
-								"recovery-code-regeneration"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Link a user account",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"provider\": \"\",\r\n  \"connection_id\": \"\",\r\n  \"user_id\": \"\",\r\n  \"link_with\": \"\"\r\n}"
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users/:id/identities",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users",
-								":id",
-								"identities"
-							],
-							"variable": [
-								{
-									"key": "id"
-								}
-							]
-						},
-						"description": "Links the account specified in the body (<strong>secondary account</strong>) to the account specified by the <code>id</code> param of the URL (<strong>primary account</strong>).<br>There are two ways of invoking the endpoint:<br><ul><li>With the authenticated primary account's JWT in the Authorization header, which has the <code>update:current_user_identities</code> scope:\n<pre>\nPOST /api/v2/users/PRIMARY_ACCOUNT_USER_ID/identities\nAuthorization: \"Bearer PRIMARY_ACCOUNT_JWT\"\n{\n  \"link_with\": \"SECONDARY_ACCOUNT_JWT\"\n}\n</pre>In this case only the <code>link_with</code> param is required in the body, containing the JWT obtained upon the secondary account's authentication.</li><li>With an API V2 generated token with <code>update:users</code> scope:\n<pre>\nPOST /api/v2/users/PRIMARY_ACCOUNT_USER_ID/identities\nAuthorization: \"Bearer YOUR_API_V2_TOKEN\"\n{\n  \"provider\": \"SECONDARY_ACCOUNT_PROVIDER\",\n  \"connection_id\": \"SECONDARY_ACCOUNT_CONNECTION_ID(OPTIONAL)\",\n  \"user_id\": \"SECONDARY_ACCOUNT_USER_ID\"\n}\n</pre>In this case you need to send <code>provider</code> and <code>user_id</code> in the body. Optionally you can also send the <code>connection_id</code> param which is suitable for identifying a particular database connection for the 'auth0' provider.</li></ul>On successful linking, the endpoint returns the new array of the primary account identities."
-					},
-					"response": []
-				}
-			],
-			"description": "Users"
-		},
-		{
-			"name": "Users By Email",
-			"item": [
-				{
-					"name": "Search users by email",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{auth0_token}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "https://{{auth0_domain}}/api/v2/users-by-email?email=",
-							"protocol": "https",
-							"host": [
-								"{{auth0_domain}}"
-							],
-							"path": [
-								"api",
-								"v2",
-								"users-by-email"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "",
-									"description": "Email address to search for"
-								}
-							]
-						},
-						"description": "If Auth0 is the identify provider (idP), the email address associated with a user is saved in lower case, regardless of how you initially provided it. For example, if you register a user as **JohnSmith@example.com**, Auth0 saves the user's email as **johnsmith@example.com**.\n\nIn cases where Auth0 is not the idP, the `email` is stored based on the rules of idP, so make sure the search is made using the correct capitalization.\n\nWhen using this endpoint, make sure that you are searching for users via email addresses using the correct case."
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "9754013f-989f-48cb-9ac7-1d6d63fe9dfb",
+    "name": "Auth0 Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Blacklists",
+      "item": [
+        {
+          "name": "Get all blacklisted tokens",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/blacklists/tokens",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "blacklists",
+                "tokens"
+              ]
+            },
+            "description": "Retrieves the <code>jti</code> and <code>aud</code> of all tokens in the blacklist."
+          },
+          "response": []
+        },
+        {
+          "name": "Blacklist a token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"aud\": \"\",\r\n  \"jti\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/blacklists/tokens",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "blacklists",
+                "tokens"
+              ]
+            },
+            "description": "Adds the token identified by the <code>jti</code> to a blacklist for the tenant."
+          },
+          "response": []
+        }
+      ],
+      "description": "Blacklists"
+    },
+    {
+      "name": "Client Grants",
+      "item": [
+        {
+          "name": "Get all client grants",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/client-grants",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "client-grants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a client grant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"client_id\": \"\",\r\n  \"audience\": \"\",\r\n  \"scope\": [\r\n    \"\"\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/client-grants",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "client-grants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a client grant",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/client-grants/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "client-grants",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a client grant",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"scope\": [\r\n    \"\"\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/client-grants/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "client-grants",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Client Grants"
+    },
+    {
+      "name": "Clients",
+      "item": [
+        {
+          "name": "Get all clients",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/clients",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "clients"
+              ]
+            },
+            "description": "Retrieves a list of all client applications. Accepts a list of fields to include or exclude.<br/><strong>Important:</strong> The <code>client_secret</code> and <code>encryption_key</code> attributes can only be retrieved with the <code>read:client_keys</code> scope."
+          },
+          "response": []
+        },
+        {
+          "name": "Create a client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"client_secret\": \"\",\r\n  \"logo_uri\": \"\",\r\n  \"callbacks\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_origins\": [\r\n    \"\"\r\n  ],\r\n  \"client_aliases\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_clients\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_logout_urls\": [\r\n    \"\"\r\n  ],\r\n  \"token_endpoint_auth_method\": \"\",\r\n  \"app_type\": \"\",\r\n  \"is_first_party\": true,\r\n  \"jwt_configuration\": {\r\n    \"lifetime_in_seconds\": 0,\r\n    \"secret_encoded\": true,\r\n    \"scopes\": {},\r\n    \"alg\": \"\"\r\n  },\r\n  \"encryption_key\": {\r\n    \"pub\": \"\",\r\n    \"cert\": \"\"\r\n  },\r\n  \"sso\": true,\r\n  \"custom_login_page_on\": true,\r\n  \"custom_login_page\": \"\",\r\n  \"custom_login_page_preview\": \"\",\r\n  \"form_template\": \"\",\r\n  \"is_heroku_app\": true,\r\n  \"addons\": {\r\n    \"aws\": {},\r\n    \"azure_blob\": {},\r\n    \"azure_sb\": {},\r\n    \"rms\": {},\r\n    \"mscrm\": {},\r\n    \"slack\": {},\r\n    \"box\": {},\r\n    \"cloudbees\": {},\r\n    \"concur\": {},\r\n    \"dropbox\": {},\r\n    \"echosign\": {},\r\n    \"egnyte\": {},\r\n    \"firebase\": {},\r\n    \"newrelic\": {},\r\n    \"office365\": {},\r\n    \"salesforce\": {},\r\n    \"salesforce_api\": {},\r\n    \"salesforce_sandbox_api\": {},\r\n    \"samlp\": {},\r\n    \"layer\": {},\r\n    \"sap_api\": {},\r\n    \"sharepoint\": {},\r\n    \"springcm\": {},\r\n    \"wams\": {},\r\n    \"wsfed\": {},\r\n    \"zendesk\": {},\r\n    \"zoom\": {}\r\n  },\r\n  \"resource_servers\": [\r\n    {\r\n      \"identifier\": \"\",\r\n      \"scopes\": [\r\n        \"\"\r\n      ]\r\n    }\r\n  ],\r\n  \"client_metadata\": {},\r\n  \"mobile\": {\r\n    \"android\": {},\r\n    \"ios\": {}\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/clients",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "clients"
+              ]
+            },
+            "description": "Creates a new client application. The samples on the right show every attribute that can be used."
+          },
+          "response": []
+        },
+        {
+          "name": "Get a client",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/clients/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "clients",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Retrieves a client by its id.<br/><strong>Important:</strong> The <code>client_secret</code>,<code>encryption_key</code> and <code>signing_keys</code> attributes can only be retrieved with the <code>read:client_keys</code> scope."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a client",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/clients/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "clients",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Deletes a client and all its related assets (like rules, connections, etc) given its id."
+          },
+          "response": []
+        },
+        {
+          "name": "Update a client",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"client_secret\": \"\",\r\n  \"logo_uri\": \"\",\r\n  \"callbacks\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_origins\": [\r\n    \"\"\r\n  ],\r\n  \"client_aliases\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_clients\": [\r\n    \"\"\r\n  ],\r\n  \"allowed_logout_urls\": [\r\n    \"\"\r\n  ],\r\n  \"jwt_configuration\": {\r\n    \"lifetime_in_seconds\": 0,\r\n    \"secret_encoded\": true,\r\n    \"scopes\": {},\r\n    \"alg\": \"\"\r\n  },\r\n  \"encryption_key\": {\r\n    \"pub\": \"\",\r\n    \"cert\": \"\",\r\n    \"subject\": \"\"\r\n  },\r\n  \"sso\": true,\r\n  \"custom_login_page_on\": true,\r\n  \"token_endpoint_auth_method\": \"\",\r\n  \"app_type\": \"\",\r\n  \"is_first_party\": true,\r\n  \"custom_login_page\": \"\",\r\n  \"custom_login_page_preview\": \"\",\r\n  \"form_template\": \"\",\r\n  \"addons\": {\r\n    \"aws\": {},\r\n    \"azure_blob\": {},\r\n    \"azure_sb\": {},\r\n    \"rms\": {},\r\n    \"mscrm\": {},\r\n    \"slack\": {},\r\n    \"box\": {},\r\n    \"cloudbees\": {},\r\n    \"concur\": {},\r\n    \"dropbox\": {},\r\n    \"echosign\": {},\r\n    \"egnyte\": {},\r\n    \"firebase\": {},\r\n    \"newrelic\": {},\r\n    \"office365\": {},\r\n    \"salesforce\": {},\r\n    \"salesforce_api\": {},\r\n    \"salesforce_sandbox_api\": {},\r\n    \"samlp\": {},\r\n    \"layer\": {},\r\n    \"sap_api\": {},\r\n    \"sharepoint\": {},\r\n    \"springcm\": {},\r\n    \"wams\": {},\r\n    \"wsfed\": {},\r\n    \"zendesk\": {},\r\n    \"zoom\": {}\r\n  },\r\n  \"resource_servers\": [\r\n    {\r\n      \"identifier\": \"\",\r\n      \"scopes\": [\r\n        \"\"\r\n      ]\r\n    }\r\n  ],\r\n  \"client_metadata\": {},\r\n  \"mobile\": {\r\n    \"android\": {},\r\n    \"ios\": {}\r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/clients/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "clients",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "<strong>Important:</strong> The <code>client_secret</code> and <code>encryption_key</code> attributes can only be updated with the <code>update:client_keys</code> scope."
+          },
+          "response": []
+        }
+      ],
+      "description": "Clients"
+    },
+    {
+      "name": "Connections",
+      "item": [
+        {
+          "name": "Get all connections",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/connections",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "connections"
+              ]
+            },
+            "description": "Retrieves every connection matching the specified strategy. All connections are retrieved if no strategy is being specified. Accepts a list of fields to include or exclude in the resulting list of connection objects."
+          },
+          "response": []
+        },
+        {
+          "name": "Create a connection",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"strategy\": \"\",\r\n  \"options\": {\r\n    \"validation\": {},\r\n    \"passwordPolicy\": \"\",\r\n    \"password_history\": {},\r\n    \"password_no_personal_info\": {},\r\n    \"password_dictionary\": {}\r\n  },\r\n  \"enabled_clients\": [\r\n    \"\"\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/connections",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "connections"
+              ]
+            },
+            "description": "Creates a new connection according to the JSON object received in <code>body</code>.<br/> The samples on the right show all available attributes. Mandatory attributes are <code>name</code> and <code>strategy</code>.<br/> Valid Strategy names are: <code>ad</code>, <code>adfs</code>, <code>amazon</code>, <code>dropbox</code>, <code>bitbucket</code>, <code>aol</code>, <code>auth0-adldap</code>, <code>auth0-oidc</code>, <code>auth0</code>, <code>baidu</code>, <code>bitly</code>, <code>box</code>, <code>custom</code>, <code>dwolla</code>, <code>email</code>, <code>evernote-sandbox</code>, <code>evernote</code>, <code>exact</code>, <code>facebook</code>, <code>fitbit</code>, <code>flickr</code>, <code>github</code>, <code>google-apps</code>, <code>google-oauth2</code>, <code>google-openid</code>, <code>instagram</code>, <code>ip</code>, <code>linkedin</code>, <code>miicard</code>, <code>oauth1</code>, <code>oauth2</code>, <code>office365</code>, <code>paypal</code>, <code>pingfederate</code>, <code>planningcenter</code>, <code>renren</code>, <code>salesforce-community</code>, <code>salesforce-sandbox</code>, <code>salesforce</code>, <code>samlp</code>, <code>sharepoint</code>, <code>shopify</code>, <code>sms</code>, <code>soundcloud</code>, <code>thecity-sandbox</code>, <code>thecity</code>, <code>thirtysevensignals</code>, <code>twitter</code>, <code>untappd</code>, <code>vkontakte</code>, <code>waad</code>, <code>weibo</code>, <code>windowslive</code>, <code>wordpress</code>, <code>yahoo</code>, <code>yammer</code>, <code>yandex</code>"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a connection",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/connections/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "connections",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Retrieves a connection by its <code>id</code>."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a connection",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/connections/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "connections",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Deletes a connection and all its users."
+          },
+          "response": []
+        },
+        {
+          "name": "Update a connection",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"options\": {\r\n    \"validation\": {},\r\n    \"passwordPolicy\": \"\",\r\n    \"password_history\": {},\r\n    \"password_no_personal_info\": {},\r\n    \"password_dictionary\": {}\r\n  },\r\n  \"enabled_clients\": [\r\n    \"\"\r\n  ]\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/connections/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "connections",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Note: if you use the options parameter, the whole options object will be overridden, ensure all parameters are present"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a connection user",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/connections/:id/users",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "connections",
+                ":id",
+                "users"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Deletes a specified connection user by its email (currently only database connections are supported and you cannot delete all users from specific connection)."
+          },
+          "response": []
+        }
+      ],
+      "description": "Connections"
+    },
+    {
+      "name": "Device Credentials",
+      "item": [
+        {
+          "name": "List device credentials",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/device-credentials",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "device-credentials"
+              ]
+            },
+            "description": "You can use the device-credentials endpoint using Basic authentication with username and password from a database connection<br />The Authorization header should be <code>Authorization: Basic base64(\"{db_conn_name}\\{user}:{password}\")</code>\n"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a device public key",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"device_name\": \"\",\r\n  \"type\": \"\",\r\n  \"value\": \"\",\r\n  \"device_id\": \"\",\r\n  \"client_id\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/device-credentials",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "device-credentials"
+              ]
+            },
+            "description": "You can use the device-credentials endpoint using Basic authentication with username and password from a database connection<br />The Authorization header should be <code>Authorization: Basic base64(\"{db_conn_name}\\{user}:{password}\")</code>\n"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a device credential",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/device-credentials/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "device-credentials",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "You can use the device-credentials endpoint using Basic authentication with username and password from a database connection<br />The Authorization header should be <code>Authorization: Basic base64(\"{db_conn_name}\\{user}:{password}\")</code>\n"
+          },
+          "response": []
+        }
+      ],
+      "description": "Device Credentials"
+    },
+    {
+      "name": "Emails",
+      "item": [
+        {
+          "name": "Get the email provider",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/emails/provider",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "emails",
+                "provider"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete the email provider",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/emails/provider",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "emails",
+                "provider"
+              ]
+            },
+            "description": "<strong>USE WITH CAUTION</strong>"
+          },
+          "response": []
+        },
+        {
+          "name": "Configure the email provider",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"enabled\": true,\r\n  \"default_from_address\": \"\",\r\n  \"credentials\": {\r\n    \"api_key\": \"\"\r\n  },\r\n  \"settings\": {}\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/emails/provider",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "emails",
+                "provider"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update the email provider",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"enabled\": true,\r\n  \"default_from_address\": \"\",\r\n  \"credentials\": {\r\n    \"api_key\": \"\"\r\n  },\r\n  \"settings\": {}\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/emails/provider",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "emails",
+                "provider"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Emails"
+    },
+    {
+      "name": "Guardian",
+      "item": [
+        {
+          "name": "Get a list of factors and statuses",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/factors",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "factors"
+              ]
+            },
+            "description": "Retrieves all factors. Useful to check factor enablement and trial status."
+          },
+          "response": []
+        },
+        {
+          "name": "Get a Guardian enrollment",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/enrollments/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "enrollments",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Retrieves an enrollment. Useful to check its type and related metadata."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a Guardian enrollment",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/enrollments/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "enrollments",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Deletes an enrollment. Useful when you want to force re-enroll."
+          },
+          "response": []
+        },
+        {
+          "name": "Get enrollment and verification templates",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/factors/sms/templates",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "factors",
+                "sms",
+                "templates"
+              ]
+            },
+            "description": "Retrieve both templates. Useful to check if a different template than default were set."
+          },
+          "response": []
+        },
+        {
+          "name": "Update enrollment and verification SMS templates.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"enrollment_message\": \"\",\r\n  \"verification_message\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/factors/sms/templates",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "factors",
+                "sms",
+                "templates"
+              ]
+            },
+            "description": "Useful to send custom messages on sms enrollment and verification"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Guardian factor provider",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/factors/:factor_name/providers/:name",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "factors",
+                ":factor_name",
+                "providers",
+                ":name"
+              ],
+              "variable": [
+                {
+                  "key": "factor_name"
+                },
+                {
+                  "key": "name"
+                }
+              ]
+            },
+            "description": "Returns provider configuration"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Guardian Factor",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"enabled\": true\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/factors/:name",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "factors",
+                ":name"
+              ],
+              "variable": [
+                {
+                  "key": "name"
+                }
+              ]
+            },
+            "description": "Useful to enable / disable factor"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Guardian's Twilio SMS factor provider",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"from\": \"\",\r\n  \"messaging_service_sid\": \"\",\r\n  \"auth_token\": \"\",\r\n  \"sid\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/guardian/factors/sms/providers/twilio",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "guardian",
+                "factors",
+                "sms",
+                "providers",
+                "twilio"
+              ]
+            },
+            "description": "Useful to configure SMS provider"
+          },
+          "response": []
+        }
+      ],
+      "description": "Guardian"
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "Get a job",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/jobs/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "jobs",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Retrieves a job. Useful to check its status."
+          },
+          "response": []
+        },
+        {
+          "name": "Get failed job error details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/jobs/:id/errors",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "jobs",
+                ":id",
+                "errors"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Import users",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/jobs/users-imports",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "jobs",
+                "users-imports"
+              ]
+            },
+            "description": "Imports users to a connection from a file using a long running job. <strong>Important:</strong> The documentation for the file format is <a href=https://docs.auth0.com/bulk-import>here</a>."
+          },
+          "response": []
+        },
+        {
+          "name": "Send a \"verify email address\" email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user_id\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/jobs/verification-email",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "jobs",
+                "verification-email"
+              ]
+            },
+            "description": "Send an email to the specified user that asks them to click a link to verify their email address."
+          },
+          "response": []
+        }
+      ],
+      "description": "Jobs"
+    },
+    {
+      "name": "Logs",
+      "item": [
+        {
+          "name": "Search log events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/logs",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "logs"
+              ]
+            },
+            "description": "Retrieves log entries that match the specified search criteria (or list all entries if no criteria is used).<br/>You can search with a criteria using the <code>q</code> parameter or you can search by a specific log ID (search by checkpoint):<br/><br/><h5>The search by criteria can use the following parameters:</h5><ul><li><b>q:</b> Search Criteria using <a href=\"https://auth0.com/docs/api/management/v2/query-string-syntax\">Query String Syntax</a></li><li><b>page:</b> The page number. Zero based</li><li><b>per_page:</b> The amount of entries per page</li><li><b>sort:</b> The field to use for sorting. Use <code>field:order</code>, where order is <code>1</code> for ascending and <code>-1</code> for descending. For example <code>date:-1</code></li><li><b>fields:</b> A comma separated list of fields to include or exclude (depending on include_fields) from the result, empty to retrieve all fields</li><li><b>include_fields:</b> <code>true</code> if the fields specified are to be included in the result, <code>false</code> otherwise. Defaults to <code>true</code></li><li><b>include_totals:</b> <code>true</code> if a query summary must be included in the result, false otherwise. Default <code>false</code>.</li></ul><h5>The search by checkpoint use the following parameters:</h5><ul><li><b>from:</b> Log Event Id to start retrieving logs. You can limit the amount of logs using the <code>take</code> parameter.</li><li><b>take:</b> The total amount of entries to retrieve when using the <code>from</code> parameter.</li></ul>\n<h5>Event acronym mapping</h5><ul><li>s: Success Login </li><li>seacft: Success Exchange (Authorization Code for Access Token)</li><li>feacft: Failed Exchange (Authorization Code for Access Token)</li><li>seccft: Success Exchange (Client Credentials for Access Token)</li><li>feccft: Failed Exchange (Client Credentials for Access Token)</li><li>f: Failed Login </li><li>w: Warnings During Login </li><li>du: Deleted User </li><li>fu: Failed Login (invalid email/username) </li><li>fp: Failed Login (wrong password) </li><li>fc: Failed by Connector </li><li>fco: Failed by CORS </li><li>con: Connector Online </li><li>coff: Connector Offline </li><li>fcpro: Failed Connector Provisioning </li><li>ss: Success Signup </li><li>fs: Failed Signup </li><li>cs: Code Sent </li><li>cls: Code/Link Sent </li><li>sv: Success Verification Email </li><li>fv: Failed Verification Email </li><li>scp: Success Change Password </li><li>fcp: Failed Change Password </li><li>sce: Success Change Email </li><li>fce: Failed Change Email </li><li>scu: Success Change Username </li><li>fcu: Failed Change Username </li><li>scpn: Success Change Phone Number </li><li>fcpn: Failed Change Phone Number </li><li>svr: Success Verification Email Request </li><li>fvr: Failed Verification Email Request </li><li>scpr: Success Change Password Request </li><li>fcpr: Failed Change Password Request </li><li>fn: Failed Sending Notification </li><li>sapi: API Operation </li><li>fapi: Failed API Operation </li><li>limit_wc: Blocked Account </li><li>limit_mu: Blocked IP Address </li><li>limit_ui: Too Many Calls to /userinfo </li><li>api_limit: Rate Limit On API </li><li>sdu: Successful User Deletion </li><li>fdu: Failed User Deletion </li><li>slo: Success Logout</li><li>flo: Failed Logout</li><li>sd: Success Delegation</li><li>fd: Failed Delegation</li></ul>\n<h5>List of fields that can be used in fields and sort</h5><ul><li>date: The moment when the event occured.</li><li>connection: The connection related to the event.</li><li>client_id: The client id related to the event</li><li>client_name: The name of the client related to the event.</li><li>ip: The IP address from where the request that caused the log entry originated.</li><li>user_id: The user id related to the event.</li><li>user_name: The user name related to the event.</li><li>description: The description of the event.</li><li>user_agent: The user agent that is related to the event.</li><li>type: The event type. Refer to the event acronym mappings above for a list of possible event types.</li><li>details: The details object of the event.</li><li>strategy: The connection strategy related to the event.</li><li>strategy_type: The connection strategy type related to the event.</li></ul>"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a log event by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/logs/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "logs",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Retrieves the data related to the log entry identified by id. This returns a single log entry representation as specified in the schema."
+          },
+          "response": []
+        }
+      ],
+      "description": "Logs"
+    },
+    {
+      "name": "Resource Servers",
+      "item": [
+        {
+          "name": "Get a resource server by its id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/resource-servers/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "resource-servers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a resource server",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/resource-servers/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "resource-servers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a resource server",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"scopes\": [\r\n    {\r\n      \"value\": \"\",\r\n      \"description\": \"\"\r\n    }\r\n  ],\r\n  \"signing_alg\": \"\",\r\n  \"signing_secret\": \"\",\r\n  \"token_lifetime\": 0\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/resource-servers/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "resource-servers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a resource server",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"identifier\": \"\",\r\n  \"scopes\": [\r\n    {\r\n      \"value\": \"\",\r\n      \"description\": \"\"\r\n    }\r\n  ],\r\n  \"signing_alg\": \"\",\r\n  \"signing_secret\": \"\",\r\n  \"token_lifetime\": 0\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/resource-servers",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "resource-servers"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Resource Servers"
+    },
+    {
+      "name": "Rules",
+      "item": [
+        {
+          "name": "Get all rules",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/rules",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "rules"
+              ]
+            },
+            "description": "Retrieves a list of all rules. Accepts a list of fields to include or exclude.<br/> The <code>enabled</code> parameter can be specified to get enabled or disabled rules. The rule's stage of executing could be set to the following values <code>login_success</code>, <code>login_failure</code> or <code>pre_authorize</code>"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a rule",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"\",\r\n  \"script\": \"\",\r\n  \"order\": {},\r\n  \"enabled\": true,\r\n  \"stage\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/rules",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "rules"
+              ]
+            },
+            "description": "Creates a new rule according to the JSON object received in <code>body</code>.<br/>The samples on the right show you every attribute that could be used. Mandatory attributes are <code>name</code> and <code>script</code>Note: Changing a rule's stage of execution from the default <code>login_success</code> can change the rule's function signature to have user omitted."
+          },
+          "response": []
+        },
+        {
+          "name": "Get a rule",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/rules/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "rules",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Retrieves a rule by its ID. Accepts a list of fields to include or exclude in the result."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a rule",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/rules/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "rules",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a rule",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"script\": \"\",\r\n  \"name\": \"\",\r\n  \"order\": {},\r\n  \"enabled\": true\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/rules/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "rules",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Rules"
+    },
+    {
+      "name": "Stats",
+      "item": [
+        {
+          "name": "Get active users count",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/stats/active-users",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "stats",
+                "active-users"
+              ]
+            },
+            "description": "Gets the active users count (logged in during the last 30 days)."
+          },
+          "response": []
+        },
+        {
+          "name": "Get daily stats",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/stats/daily",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "stats",
+                "daily"
+              ]
+            },
+            "description": "Gets the daily stats for a particular period."
+          },
+          "response": []
+        }
+      ],
+      "description": "Stats"
+    },
+    {
+      "name": "Tenants",
+      "item": [
+        {
+          "name": "Get tenant settings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/tenants/settings",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "tenants",
+                "settings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update tenant settings",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"change_password\": {\r\n    \"enabled\": true,\r\n    \"html\": \"\"\r\n  },\r\n  \"guardian_mfa_page\": {\r\n    \"enabled\": true,\r\n    \"html\": \"\"\r\n  },\r\n  \"error_page\": {\r\n    \"html\": \"\",\r\n    \"show_log_link\": true,\r\n    \"url\": \"\"\r\n  },\r\n  \"flags\": {\r\n    \"change_pwd_flow_v1\": true,\r\n    \"enable_client_connections\": true,\r\n    \"enable_apis_section\": true,\r\n    \"enable_pipeline2\": true\r\n  },\r\n  \"friendly_name\": \"\",\r\n  \"picture_url\": \"\",\r\n  \"support_email\": \"\",\r\n  \"support_url\": \"\",\r\n  \"allowed_logout_urls\": [\r\n    \"\"\r\n  ],\r\n  \"session_lifetime\": 0\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/tenants/settings",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "tenants",
+                "settings"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Tenants"
+    },
+    {
+      "name": "Tickets",
+      "item": [
+        {
+          "name": "Create an email verification ticket",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"result_url\": \"\",\r\n  \"user_id\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/tickets/email-verification",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "tickets",
+                "email-verification"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a password change ticket",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"result_url\": \"\",\r\n  \"user_id\": \"\",\r\n  \"new_password\": \"\",\r\n  \"connection_id\": \"\",\r\n  \"email\": \"\",\r\n  \"ttl_sec\": 0\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/tickets/password-change",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "tickets",
+                "password-change"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "Tickets"
+    },
+    {
+      "name": "User Blocks",
+      "item": [
+        {
+          "name": "Get blocks by identifier",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/user-blocks",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "user-blocks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unblock by identifier",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/user-blocks",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "user-blocks"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a user's blocks",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/user-blocks/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "user-blocks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unblock a user",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/user-blocks/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "user-blocks",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "User Blocks"
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "List or search users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"connection\": \"\",\r\n  \"email\": \"\",\r\n  \"username\": \"\",\r\n  \"password\": \"\",\r\n  \"phone_number\": \"\",\r\n  \"user_metadata\": {},\r\n  \"email_verified\": true,\r\n  \"app_metadata\": {}\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users"
+              ]
+            },
+            "description": "Creates a new user according to the JSON object received in <code>body</code>.<br/> The samples on the right show you every attribute that could be used. The attribute <code>connection</code> is always mandatory but depending on the type of connection you are using there could be others too. For instance, Auth0 DB Connections require <code>email</code> and <code>password</code>."
+          },
+          "response": []
+        },
+        {
+          "name": "Get a user",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a user",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a user",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"blocked\": true,\r\n  \"email_verified\": true,\r\n  \"email\": \"\",\r\n  \"verify_email\": true,\r\n  \"phone_number\": \"\",\r\n  \"phone_verified\": true,\r\n  \"verify_phone_number\": true,\r\n  \"password\": \"\",\r\n  \"verify_password\": true,\r\n  \"user_metadata\": {},\r\n  \"app_metadata\": {},\r\n  \"connection\": \"\",\r\n  \"username\": \"\",\r\n  \"client_id\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Updates a user with the object's properties received in the request's body (the object should be a JSON object).<br/>These are the attributes that can be updated at the root level:<ul><li>blocked</li><li>email_verified</li><li>email</li><li>verify_email</li><li>password</li><li>phone_number</li><li>phone_verified</li><li>verify_password</li><li>user_metadata</li><li>app_metadata</li><li>username</li></ul>Some considerations:<ul><li>The properties of the new object will replace the old ones.</li><li>The metadata fields are an exception to this rule (<code>user_metadata</code> and <code>app_metadata</code>). These properties are merged instead of being replaced but be careful, the merge only occurs on the first level.</li><li>If you are updating <code>email_verified</code>, <code>phone_verified</code>, <code>username</code> or <code>password</code> you need to specify the <code>connection</code> property too.</li><li>If your are updating <code>email</code> or <code>phone_number</code> you need to specify the <code>connection</code> and the <code>client_id</code> properties.</ul><h5>Updating a field (non-metadata property)</h5>To mark the email address of a user as verified, the body to send should be:<pre><code>{ \"email_verified\": true }</code></pre><h5>Updating a user metadata root property</h5>Let's asume that our test user has the following <code>user_metadata</code>:<pre><code>{ \"user_metadata\" : { \"profileCode\": 1479 } }</code></pre>To add the field <code>addresses</code> the body to send should be:<pre><code>{ \"user_metadata\" : { \"addresses\": {\"work_address\": \"100 Industrial Way\"} }}</code></pre>The modified object ends up with the following <code>user_metadata</code> property:<pre><code>{\n  \"user_metadata\": {\n    \"profileCode\": 1479,\n    \"addresses\": { \"work_address\": \"100 Industrial Way\" }\n  }\n}</code></pre><h5>Updating an inner user metadata property</h5>Starting from previous user metadata, if we want to add the field <code>\"home_address\": \"742 Evergreen Terrace\"</code> in <code>addresses</code> we should send the whole addresses object (since this object is on the first level, it will be merged in, but it's own properties won't). The body to send should be:\n<pre><code>{\n  \"user_metadata\": {\n    \"addresses\": {\n      \"work_address\": \"100 Industrial Way\",\n      \"home_address\": \"742 Evergreen Terrace\"\n    }\n  }\n}</code></pre>The modified object ends up with the following <code>user_metadata</code> property:<pre><code>{\n  \"user_metadata\": {\n    \"profileCode\": 1479,\n    \"addresses\": {\n      \"work_address\": \"100 Industrial Way\",\n      \"home_address\": \"742 Evergreen Terrace\"\n    }\n  }\n}</code></pre>"
+          },
+          "response": []
+        },
+        {
+          "name": "Get user's log events",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:user_id/logs",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":user_id",
+                "logs"
+              ],
+              "variable": [
+                {
+                  "key": "user_id"
+                }
+              ]
+            },
+            "description": "Retrieve every log event for a specific user id<br/><h5>Event acronym mapping</h5><ul><li>s: Success Login </li><li>seacft: Success Exchange (Authorization Code for Access Token)</li><li>feacft: Failed Exchange (Authorization Code for Access Token)</li><li>seccft: Success Exchange (Client Credentials for Access Token)</li><li>feccft: Failed Exchange (Client Credentials for Access Token)</li><li>f: Failed Login </li><li>w: Warnings During Login </li><li>du: Deleted User </li><li>fu: Failed Login (invalid email/username) </li><li>fp: Failed Login (wrong password) </li><li>fc: Failed by Connector </li><li>fco: Failed by CORS </li><li>con: Connector Online </li><li>coff: Connector Offline </li><li>fcpro: Failed Connector Provisioning </li><li>ss: Success Signup </li><li>fs: Failed Signup </li><li>cs: Code Sent </li><li>cls: Code/Link Sent </li><li>sv: Success Verification Email </li><li>fv: Failed Verification Email </li><li>scp: Success Change Password </li><li>fcp: Failed Change Password </li><li>sce: Success Change Email </li><li>fce: Failed Change Email </li><li>scu: Success Change Username </li><li>fcu: Failed Change Username </li><li>scpn: Success Change Phone Number </li><li>fcpn: Failed Change Phone Number </li><li>svr: Success Verification Email Request </li><li>fvr: Failed Verification Email Request </li><li>scpr: Success Change Password Request </li><li>fcpr: Failed Change Password Request </li><li>fn: Failed Sending Notification </li><li>sapi: API Operation </li><li>fapi: Failed API Operation </li><li>limit_wc: Blocked Account </li><li>limit_mu: Blocked IP Address </li><li>limit_ui: Too Many Calls to /userinfo </li><li>api_limit: Rate Limit On API </li><li>sdu: Successful User Deletion </li><li>fdu: Failed User Deletion </li><li>slo: Success Logout</li><li>flo: Failed Logout</li><li>sd: Success Delegation</li><li>fd: Failed Delegation</li></ul>\n<h5>List of fields that can be used in fields and sort</h5><ul><li>date: The moment when the event occured.</li><li>connection: The connection related to the event.</li><li>client_id: The client id related to the event</li><li>client_name: The name of the client related to the event.</li><li>ip: The IP address from where the request that caused the log entry originated.</li><li>user_id: The user id related to the event.</li><li>user_name: The user name related to the event.</li><li>description: The description of the event.</li><li>user_agent: The user agent that is related to the event.</li><li>type: The event type. Refer to the event acronym mappings above for a list of possible event types.</li><li>details: The details object of the event.</li><li>strategy: The connection strategy related to the event.</li><li>strategy_type: The connection strategy type related to the event.</li></ul>"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a list of Guardian enrollments",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id/enrollments",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id",
+                "enrollments"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Retrieves all Guardian enrollments."
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a user's multifactor provider",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id/multifactor/:provider",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id",
+                "multifactor",
+                ":provider"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                },
+                {
+                  "key": "provider"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unlink a user identity",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id/identities/:provider/:user_id",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id",
+                "identities",
+                ":provider",
+                ":user_id"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                },
+                {
+                  "key": "provider"
+                },
+                {
+                  "key": "user_id"
+                }
+              ]
+            },
+            "description": "Unlinks an identity from the target user, and it becomes a separated user again.\n"
+          },
+          "response": []
+        },
+        {
+          "name": "Removes the current recovery token, generates and returns a new one",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id/recovery-code-regeneration",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id",
+                "recovery-code-regeneration"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Link a user account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"provider\": \"\",\r\n  \"connection_id\": \"\",\r\n  \"user_id\": \"\",\r\n  \"link_with\": \"\"\r\n}"
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users/:id/identities",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users",
+                ":id",
+                "identities"
+              ],
+              "variable": [
+                {
+                  "key": "id"
+                }
+              ]
+            },
+            "description": "Links the account specified in the body (<strong>secondary account</strong>) to the account specified by the <code>id</code> param of the URL (<strong>primary account</strong>).<br>There are two ways of invoking the endpoint:<br><ul><li>With the authenticated primary account's JWT in the Authorization header, which has the <code>update:current_user_identities</code> scope:\n<pre>\nPOST /api/v2/users/PRIMARY_ACCOUNT_USER_ID/identities\nAuthorization: \"Bearer PRIMARY_ACCOUNT_JWT\"\n{\n  \"link_with\": \"SECONDARY_ACCOUNT_JWT\"\n}\n</pre>In this case only the <code>link_with</code> param is required in the body, containing the JWT obtained upon the secondary account's authentication.</li><li>With an API V2 generated token with <code>update:users</code> scope:\n<pre>\nPOST /api/v2/users/PRIMARY_ACCOUNT_USER_ID/identities\nAuthorization: \"Bearer YOUR_API_V2_TOKEN\"\n{\n  \"provider\": \"SECONDARY_ACCOUNT_PROVIDER\",\n  \"connection_id\": \"SECONDARY_ACCOUNT_CONNECTION_ID(OPTIONAL)\",\n  \"user_id\": \"SECONDARY_ACCOUNT_USER_ID\"\n}\n</pre>In this case you need to send <code>provider</code> and <code>user_id</code> in the body. Optionally you can also send the <code>connection_id</code> param which is suitable for identifying a particular database connection for the 'auth0' provider.</li></ul>On successful linking, the endpoint returns the new array of the primary account identities."
+          },
+          "response": []
+        }
+      ],
+      "description": "Users"
+    },
+    {
+      "name": "Users By Email",
+      "item": [
+        {
+          "name": "Search users by email",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth0_token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://{{auth0_domain}}/api/v2/users-by-email?email=",
+              "protocol": "https",
+              "host": [
+                "{{auth0_domain}}"
+              ],
+              "path": [
+                "api",
+                "v2",
+                "users-by-email"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "",
+                  "description": "Email address to search for"
+                }
+              ]
+            },
+            "description": "If Auth0 is the identify provider (idP), the email address associated with a user is saved in lower case, regardless of how you initially provided it. For example, if you register a user as **JohnSmith@example.com**, Auth0 saves the user's email as **johnsmith@example.com**.\n\nIn cases where Auth0 is not the idP, the `email` is stored based on the rules of idP, so make sure the search is made using the correct capitalization.\n\nWhen using this endpoint, make sure that you are searching for users via email addresses using the correct case."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
